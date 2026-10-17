@@ -1,6 +1,6 @@
 // Edit this file to update what your family sees. Leave unknown fields blank.
 window.HOGMANAY_DETAILS = {
-  eventDate: "2026-12-31T23:59:59+00:00", // UK midnight welcoming 2027
+  eventDate: "2027-01-01T00:00:00+00:00", // UK midnight welcoming 2027
   startTime: "8:30 pm until the early hours",
   venueName: "",
   venueDescription: "",
