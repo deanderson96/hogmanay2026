@@ -8,24 +8,24 @@
   <title>Hogmanay 2026 | Family Celebrations</title>
   <link rel="stylesheet" href="styles.css">
   <script src="details.js" defer></script>
-  <script src="app.js" defer></script>
+  <script src="app.js" defer></script><script src="effects.js" defer></script><script src="pong.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to details</a>
   <header class="topbar">
     <a class="brand" href="#home"><span class="brand-star">✦</span> HOGMANAY <span class="brand-year">2026</span></a>
     <nav aria-label="Main navigation">
-      <a href="#plan">The plan</a><a href="#essentials">Essentials</a><a href="#questions">FAQs</a>
+      <a href="#plan">The plan</a><a href="#games">Games</a><a href="#essentials">Essentials</a><a href="#questions">FAQs</a>
     </nav>
   </header>
   <main id="main">
-    <section class="hero" id="home" aria-labelledby="hero-title">
+    <section class="hero" id="home" aria-labelledby="hero-title"><canvas id="fireworks" aria-hidden="true"></canvas>
       <div class="spark spark-one" aria-hidden="true">✳</div><div class="spark spark-two" aria-hidden="true">✦</div>
       <div class="hero-inner">
         <p class="eyebrow">A family celebration · 31 December 2026</p>
         <h1 id="hero-title">One more year.<br><em>One big night.</em></h1>
         <p class="hero-lead">Here's to being together, making memories and welcoming 2027 in style. Everything the family needs to know, all in one place.</p>
-        <div class="hero-buttons"><a class="button primary" href="#plan">See the plans <span aria-hidden="true">↗</span></a><a class="button outline" href="#essentials">Practical details</a></div>
+        <div class="hero-buttons"><a class="button primary" href="#plan">See the plans <span aria-hidden="true">↗</span></a><a class="button outline" href="#games">Play beer pong ↗</a></div>
         <div class="countdown-wrap"><p class="tiny-label">Countdown to the bells</p><div class="countdown" id="countdown" aria-label="Time until Hogmanay"><span>—</span></div></div>
       </div>
       <div class="hero-side" aria-hidden="true"><div class="giant-year">26<span>→</span>27</div><div class="circle-text">A NIGHT TO REMEMBER •</div></div>
@@ -43,8 +43,15 @@
         <div class="timeline-items" id="timeline"></div>
       </div>
     </section>
+    <section class="section games-section" id="games" aria-labelledby="games-title">
+      <div class="section-head"><div><p class="eyebrow">02 / PRE-GAME ARCADE</p><h2 id="games-title">Game <em>on.</em></h2></div><p class="section-aside">A little friendly competition before the bells. No drinks required to play.</p></div>
+      <div class="game-layout">
+        <div class="game-copy"><span class="game-kicker">✦ THE FAMILY ARCADE · GAME 01</span><h3>Beer pong<br><em>practice.</em></h3><p>Line up your shot. Pull back on the ball, aim for a cup and let go to launch. Clear all six cups to win the round.</p><div class="game-scoreboard"><div><span id="pong-score">0 / 6</span><small>CUPS SUNK</small></div><div><span id="pong-shots">0</span><small>THROWS</small></div><div><span id="pong-best">—</span><small>BEST ROUND</small></div></div><button type="button" class="button primary" id="pong-reset">New round ↗</button></div>
+        <div class="game-stage"><div class="game-stage-heading"><span>THE PONG TABLE</span><span class="game-live">● PRACTICE MODE</span></div><canvas id="pong-canvas" width="720" height="580" aria-label="Beer pong practice game. Drag the ball back and release to throw it into a cup." tabindex="0"></canvas><div class="game-toolbar"><button type="button" id="pong-shoot" class="game-shoot">Throw ball ↗</button><p id="pong-status" role="status" aria-live="polite">Drag the ball backwards, then release to throw.</p></div></div>
+      </div>
+    </section>
     <section class="section essentials" id="essentials">
-      <div class="section-head"><div><p class="eyebrow">02 / GOOD TO KNOW</p><h2>The little <em>details.</em></h2></div><p class="section-aside">A few things to sort before the big night.</p></div>
+      <div class="section-head"><div><p class="eyebrow">03 / GOOD TO KNOW</p><h2>The little <em>details.</em></h2></div><p class="section-aside">A few things to sort before the big night.</p></div>
       <div class="info-grid">
         <article class="info-card"><span class="info-symbol">✳</span><h3>Food & drinks</h3><p id="food">Food and drink arrangements are still being confirmed.</p></article>
         <article class="info-card"><span class="info-symbol">♢</span><h3>What to wear</h3><p id="dress">Wear whatever makes you feel festive and comfortable. More details to follow.</p></article>
@@ -54,7 +61,7 @@
       <div class="update-banner"><div><p class="tiny-label">KEEP IN THE LOOP</p><h3>Plans can change. This page keeps everyone on the same page.</h3></div><span class="banner-star" aria-hidden="true">✦</span></div>
     </section>
     <section class="section faq" id="questions">
-      <div class="section-head"><div><p class="eyebrow dark">03 / QUESTIONS</p><h2>Need to <em>know?</em></h2></div><p class="section-aside">Answers to the questions everyone usually asks.</p></div>
+      <div class="section-head"><div><p class="eyebrow dark">04 / QUESTIONS</p><h2>Need to <em>know?</em></h2></div><p class="section-aside">Answers to the questions everyone usually asks.</p></div>
       <div id="faq-list" class="faq-list"></div>
       <div class="contact-panel"><div><p class="eyebrow dark">STILL GOT A QUESTION?</p><h3>Give the organiser a shout.</h3><p id="contact-description">Contact details will be shared here soon.</p></div><a id="contact-link" class="button dark-button hidden">Get in touch ↗</a></div>
     </section>
