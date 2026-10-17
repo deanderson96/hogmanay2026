@@ -8,7 +8,7 @@
   <title>Hogmanay 2026 | Family Celebrations</title>
   <link rel="stylesheet" href="styles.css">
   <script src="details.js" defer></script>
-  <script src="app.js" defer></script><script src="effects.js" defer></script><script src="pong.js" defer></script>
+  <script src="app.js" defer></script><script src="effects.js" defer></script><script src="pong.js" defer></script><script src="family-games.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to details</a>
@@ -23,9 +23,9 @@
       <div class="spark spark-one" aria-hidden="true">✳</div><div class="spark spark-two" aria-hidden="true">✦</div>
       <div class="hero-inner">
         <p class="eyebrow">A family celebration · 31 December 2026</p>
-        <h1 id="hero-title">One more year.<br><em>One big night.</em></h1>
-        <p class="hero-lead">Here's to being together, making memories and welcoming 2027 in style. Everything the family needs to know, all in one place.</p>
-        <div class="hero-buttons"><a class="button primary" href="#plan">See the plans <span aria-hidden="true">↗</span></a><a class="button outline" href="#games">Play beer pong ↗</a></div>
+        <h1 id="hero-title">THE FINAL<br><em>COUNTDOWN.</em></h1>
+        <p class="hero-lead">31 DECEMBER · 8:30 PM 'TIL THE EARLY HOURS. Big laughs, family chaos, party games and the bells. Your all-access pass to Hogmanay 2026.</p>
+        <div class="hero-buttons"><a class="button primary" href="#plan">Explore the party <span aria-hidden="true">↗</span></a><a class="button outline" href="#games">Enter the arcade ↗</a></div>
         <div class="countdown-wrap"><p class="tiny-label">Countdown to the bells</p><div class="countdown" id="countdown" aria-label="Time until Hogmanay"><span>—</span></div></div>
       </div>
       <div class="hero-side" aria-hidden="true"><div class="giant-year">26<span>→</span>27</div><div class="circle-text">A NIGHT TO REMEMBER •</div></div>
@@ -46,8 +46,16 @@
     <section class="section games-section" id="games" aria-labelledby="games-title">
       <div class="section-head"><div><p class="eyebrow">02 / PRE-GAME ARCADE</p><h2 id="games-title">Game <em>on.</em></h2></div><p class="section-aside">A little friendly competition before the bells. No drinks required to play.</p></div>
       <div class="game-layout">
-        <div class="game-copy"><span class="game-kicker">✦ THE FAMILY ARCADE · GAME 01</span><h3>Beer pong<br><em>practice.</em></h3><p>Line up your shot. Pull back on the ball, aim for a cup and let go to launch. Clear all six cups to win the round.</p><div class="game-scoreboard"><div><span id="pong-score">0 / 6</span><small>CUPS SUNK</small></div><div><span id="pong-shots">0</span><small>THROWS</small></div><div><span id="pong-best">—</span><small>BEST ROUND</small></div></div><button type="button" class="button primary" id="pong-reset">New round ↗</button></div>
-        <div class="game-stage"><div class="game-stage-heading"><span>THE PONG TABLE</span><span class="game-live">● PRACTICE MODE</span></div><canvas id="pong-canvas" width="720" height="580" aria-label="Beer pong practice game. Drag the ball back and release to throw it into a cup." tabindex="0"></canvas><div class="game-toolbar"><button type="button" id="pong-shoot" class="game-shoot">Throw ball ↗</button><p id="pong-status" role="status" aria-live="polite">Drag the ball backwards, then release to throw.</p></div></div>
+        <div class="game-copy"><span class="game-kicker">✦ THE FAMILY ARCADE · GAME 01</span><h3>Beer pong<br><em>practice.</em></h3><p>Tap a red cup to throw the ball straight at it, or drag from the white ball to aim. Clear the table in as few shots as possible!</p><div class="game-scoreboard"><div><span id="pong-score">0 / 6</span><small>CUPS SUNK</small></div><div><span id="pong-shots">0</span><small>THROWS</small></div><div><span id="pong-best">—</span><small>BEST ROUND</small></div></div><button type="button" class="button primary" id="pong-reset">New round ↗</button></div>
+        <div class="game-stage"><div class="game-stage-heading"><span>THE PONG TABLE</span><span class="game-live">● PRACTICE MODE</span></div><canvas id="pong-canvas" width="720" height="580" aria-label="Beer pong practice game. Drag the ball back and release to throw it into a cup." tabindex="0"></canvas><div class="game-toolbar"><button type="button" id="pong-shoot" class="game-shoot">Throw ball ↗</button><p id="pong-status" role="status" aria-live="polite">Tap a red cup to shoot!</p></div></div>
+      </div>
+    </section>
+    <section class="section party-games" id="family-games">
+      <div class="section-head"><div><p class="eyebrow">MORE PARTY GAMES</p><h2>Bring the <em>chaos.</em></h2></div><p class="section-aside">Pass the phone around. No downloads, sign-ups or drinks needed.</p></div>
+      <div class="party-grid">
+        <article class="party-card"><div class="party-icon">⚡</div><p class="game-kicker">GAME 02 · SPEED RUN</p><h3>Reflex Royale</h3><p>Wait for green, then tap as fast as you can. Jump the gun and you lose.</p><div class="reaction-pad" id="reaction-pad" role="button" tabindex="0" aria-label="Start reaction test"><span id="reaction-message">TAP TO START</span><strong id="reaction-result">Ready?</strong></div><button class="mini-button" id="reaction-restart" type="button">Try again ↗</button></article>
+        <article class="party-card"><div class="party-icon">🎭</div><p class="game-kicker">GAME 03 · EVERYONE PLAYS</p><h3>Would You Rather?</h3><p>Two choices. One impossible decision. Take turns choosing and defending your answer.</p><div class="choice-question" id="rather-question">Ready for a ridiculous dilemma?</div><div class="choice-buttons"><button id="rather-a" type="button">Option A</button><button id="rather-b" type="button">Option B</button></div><p id="rather-results" aria-live="polite">Pick a side!</p><button class="mini-button" id="rather-next" type="button">Next question ↗</button></article>
+        <article class="party-card"><div class="party-icon">🎲</div><p class="game-kicker">GAME 04 · GROUP CHALLENGE</p><h3>Party Dare Generator</h3><p>Funny, harmless challenges for all ages. Draw one and give it a go.</p><div class="dare-result" id="dare-result" aria-live="polite">Who wants the first challenge?</div><button class="mini-button" id="dare-next" type="button">Give me a challenge ↗</button></article>
       </div>
     </section>
     <section class="section essentials" id="essentials">
