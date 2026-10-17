@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#100d26">
-  <meta name="description" content="Hogmanay 2026: family plans, midnight countdown, party quiz, beer pong and mini games. The good times start at 8:30 pm.">
+  <meta name="theme-color" content="#0a0a09">
+  <meta name="description" content="Hogmanay 2026: family plans, midnight countdown, party quiz, beer pong, darts and mini games. The good times start at 8:30 pm.">
   <title>Hogmanay '26 — The Big Night</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,7 @@
   <script src="effects.js" defer></script>
   <script src="quiz.js" defer></script>
   <script src="pong.js" defer></script>
+  <script src="darts.js" defer></script>
   <script src="family-games.js" defer></script>
 </head>
 <body>
@@ -112,11 +113,36 @@
       </div>
       <div class="pong-panel"><div class="panel-top"><span>● PONG PRACTICE</span><span>INTERACTIVE TABLE ↗</span></div><div id="pong-table" class="pong-table" aria-label="Six-cup beer pong practice table"><div class="pong-midline"></div><div class="cup-cluster" id="pong-cups"></div><button class="pong-ball" id="pong-ball" type="button" aria-label="Drag this ball toward a cup to throw it"></button><div id="pong-aimline" class="pong-aimline" aria-hidden="true"></div><div class="pong-floor-label">PULL BACK • RELEASE • SCORE</div></div><div class="panel-bottom"><p id="pong-status" role="status" aria-live="polite">Tap a red cup to throw!</p><button type="button" id="pong-shoot" class="shoot-button">AUTO AIM ↗</button></div></div>
     </div>
+
+    <section class="darts-layout" id="darts" aria-labelledby="darts-title">
+      <div class="darts-copy">
+        <span class="feature-badge">GAME 02 · THE DARTS CHALLENGE</span>
+        <h3 id="darts-title">TAKE<br><span>A SHOT.</span></h3>
+        <p>Nine darts. Three turns. One very important question: who's the family sharpshooter? Tap anywhere on the board to throw, or use the keyboard to aim.</p>
+        <div class="darts-stats">
+          <div><strong id="darts-score">0</strong><span>TOTAL POINTS</span></div>
+          <div><strong id="darts-throws">0 / 9</strong><span>DARTS THROWN</span></div>
+          <div><strong id="darts-best">—</strong><span>PERSONAL BEST</span></div>
+        </div>
+        <div class="darts-extra"><span>LAST THROW</span><strong id="darts-last">—</strong></div>
+        <button id="darts-reset" class="button button-dark" type="button">NEW DARTS ROUND <span>↻</span></button>
+      </div>
+      <div class="darts-panel">
+        <div class="darts-panel-top"><span>✦ DIGITAL DARTBOARD</span><span>9 DART CHALLENGE</span></div>
+        <div class="darts-board-wrap">
+          <svg id="darts-board" viewBox="0 0 600 600" tabindex="0" role="button" aria-label="Digital dartboard. Click or tap to throw. With keyboard, use arrow keys to aim and Enter or Space to throw."></svg>
+        </div>
+        <div class="darts-panel-bottom">
+          <p id="darts-status" role="status" aria-live="polite">Tap the board to throw your first dart.</p>
+          <button id="darts-throw" class="shoot-button" type="button">AIM FOR 20 ↗</button>
+        </div>
+      </div>
+    </section>
     <div class="mini-games-heading"><span>AND THE FUN DOESN'T STOP THERE</span><span>↓ THREE MORE TO TRY</span></div>
     <div class="party-grid">
-      <article class="party-card reaction-card"><span class="mini-game-index">02 / TEST YOUR SPEED</span><div class="party-icon">⚡</div><h3>REFLEX<br>ROYALE.</h3><p>Don't tap until the screen turns green. Fastest fingers win.</p><div class="reaction-pad" id="reaction-pad" role="button" tabindex="0" aria-label="Start reaction test"><span id="reaction-message">TAP TO START</span><strong id="reaction-result">READY?</strong></div><button class="mini-button" id="reaction-restart" type="button">TRY AGAIN ↗</button></article>
-      <article class="party-card rather-card"><span class="mini-game-index">03 / IMPOSSIBLE CHOICES</span><div class="party-icon">✳</div><h3>WOULD YOU<br>RATHER?</h3><p>Pick a side. Defend it loudly. Let the family decide.</p><div class="choice-question" id="rather-question">READY FOR A RIDICULOUS DILEMMA?</div><div class="choice-buttons"><button id="rather-a" type="button">OPTION A</button><button id="rather-b" type="button">OPTION B</button></div><p id="rather-results" aria-live="polite">PICK A SIDE!</p><button class="mini-button" id="rather-next" type="button">NEXT DILEMMA ↗</button></article>
-      <article class="party-card dare-card"><span class="mini-game-index">04 / SPIN THE CHAOS</span><div class="party-icon">★</div><h3>DARE<br>GENERATOR.</h3><p>Harmless, hilarious challenges. Get the whole family involved.</p><div class="dare-result" id="dare-result" aria-live="polite">WHO'S FIRST?</div><button class="mini-button" id="dare-next" type="button">GIVE ME A DARE ↗</button></article>
+      <article class="party-card reaction-card"><span class="mini-game-index">03 / TEST YOUR SPEED</span><div class="party-icon">⚡</div><h3>REFLEX<br>ROYALE.</h3><p>Don't tap until the screen turns green. Fastest fingers win.</p><div class="reaction-pad" id="reaction-pad" role="button" tabindex="0" aria-label="Start reaction test"><span id="reaction-message">TAP TO START</span><strong id="reaction-result">READY?</strong></div><button class="mini-button" id="reaction-restart" type="button">TRY AGAIN ↗</button></article>
+      <article class="party-card rather-card"><span class="mini-game-index">04 / IMPOSSIBLE CHOICES</span><div class="party-icon">✳</div><h3>WOULD YOU<br>RATHER?</h3><p>Pick a side. Defend it loudly. Let the family decide.</p><div class="choice-question" id="rather-question">READY FOR A RIDICULOUS DILEMMA?</div><div class="choice-buttons"><button id="rather-a" type="button">OPTION A</button><button id="rather-b" type="button">OPTION B</button></div><p id="rather-results" aria-live="polite">PICK A SIDE!</p><button class="mini-button" id="rather-next" type="button">NEXT DILEMMA ↗</button></article>
+      <article class="party-card dare-card"><span class="mini-game-index">05 / SPIN THE CHAOS</span><div class="party-icon">★</div><h3>DARE<br>GENERATOR.</h3><p>Harmless, hilarious challenges. Get the whole family involved.</p><div class="dare-result" id="dare-result" aria-live="polite">WHO'S FIRST?</div><button class="mini-button" id="dare-next" type="button">GIVE ME A DARE ↗</button></article>
     </div>
   </section>
 
