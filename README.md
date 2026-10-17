@@ -1,31 +1,52 @@
-# Hogmanay 2026 — family information site
+# HOGMANAY '26 — The Big Night
 
-A responsive, static site for the family celebration on **Thursday 31 December 2026**.
+A bold, mobile-first family party site for **Thursday 31 December 2026, starting at 8:30 pm and running into the early morning**.
 
-## Update the details
+## Experience
 
-Edit **[details.js](details.js)** on GitHub. All editable event information is in one place:
-- Start time, venue name/address and directions link
-- Food and drinks, dress code, travel, overnight stays
-- Timeline and frequently asked questions
-- Optional organiser email address
+- Invitation-style hero, disco-ball artwork, soft canvas fireworks and live countdown to UK midnight
+- Schedule, venue and travel information, food, dress guidance, FAQs and optional organiser contact
+- **The Big Fat Hogmanay Quiz:** 27 multiple-choice questions across New Year, general knowledge and pop culture; choose a category or a mixed round; optional 15-second speed round; scoring, streak bonuses and a local-device leaderboard
+- **Virtual beer pong:** six clickable cups with ball-flight animation, drag-to-aim, throw tally and personal best
+- **Reflex Royale**, **Would You Rather?** and **Party Dare Generator**
+- Responsive layouts, keyboard-accessible controls and reduced-motion support
 
-Leave fields blank until arrangements are agreed. The site then displays a clear 'to be confirmed' message instead of publishing invented details. Avoid putting private home addresses, personal phone numbers or other sensitive details on a public site unless you're comfortable sharing them publicly.
+The website is built with static HTML, CSS and vanilla JavaScript. No backend, build step, API key or npm installation needed.
 
-## Publish with GitHub Pages
+## Change the family details
 
-1. In this repository, open **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select branch **main** and folder **/(root)**, then save.
-4. Once published, visit **https://deanderson96.github.io/hogmanay2026/**.
+Edit [details.js](details.js) on GitHub:
 
-This is a public static website with no server or authentication. Anyone with the URL can see its details, so do not treat it as a private family portal.
+- `startTime` — currently **8:30 pm until the early hours**
+- `venueName`, `venueDescription`, `mapUrl` — leave unset until you're ready to publish
+- `food`, `dress`, `travel`, `stay` — helpful practical information
+- `timeline` — event timings
+- `faqs` — frequently asked questions
+- `contactDescription` and `contactEmail` — optional contact
 
-## Files
+Edit [quiz.js](quiz.js) to change the quiz questions and correct answers. Each question includes `cat`, `q`, four `a` options, the correct answer's zero-based index `c`, and explanatory `why`.
 
-- `index.html` — page sections and accessible markup
-- `styles.css` — responsive visual design
-- `details.js` — editable family event information
-- `app.js` — countdown, itinerary, FAQ rendering and safe links
+## Publish using GitHub Pages
 
-No build process, hosting subscription or dependencies are required. Google Fonts needs an internet connection; local fallback fonts are provided.
+1. Open **Settings → Pages** in this repository.
+2. Choose **Deploy from a branch**, branch **main**, folder **/(root)** and save.
+3. Once GitHub Pages publishes, the expected site URL is **https://deanderson96.github.io/hogmanay2026/**.
+
+Changes may take a short time to appear after commits. If the old site is still visible, reload without cache.
+
+**Privacy:** GitHub Pages is public. Do not publish private residential addresses, telephone numbers or sensitive family details unless you're comfortable making them public. The quiz leaderboard and beer pong best scores use local browser storage **only**; they are not shared between relatives on different phones.
+
+## Project files
+
+| File | Purpose |
+|---|---|
+| `index.html` | Section structure and interactive controls |
+| `styles.css` | New party design, responsive layouts, motion and game presentation |
+| `details.js` | Editable family information and itinerary |
+| `app.js` | Dynamic details, FAQ and countdown |
+| `effects.js` | Ambient fireworks and scroll-reveal effects |
+| `quiz.js` | Quiz questions, answers, timer, scoring and local leaderboard |
+| `pong.js` | Click/touch beer pong, ball animations and score |
+| `family-games.js` | Reaction timer, dilemma voting and party dares |
+
+No external JavaScript packages are required. Web fonts are optional and fall back to system fonts when unavailable.
