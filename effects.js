@@ -18,7 +18,7 @@
   if(!canvas||!hero)return;
   const ctx=canvas.getContext("2d");if(!ctx)return;
   let w=1,h=1,frame=0,nextBurst=0,particles=[],running=false,raf=0;
-  const palette=["#ddff70","#ffa8d5","#d5bdff","#fff8df","#ffc37b"];
+  const palette=["#f5dd9c","#e9bd6a","#fff4d9","#d4a04a","#b68c42"];
   function resize(){
     const r=canvas.getBoundingClientRect();w=Math.max(1,r.width);h=Math.max(1,r.height);
     const scale=Math.min(window.devicePixelRatio||1,2);
