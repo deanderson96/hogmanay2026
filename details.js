@@ -19,7 +19,7 @@ window.HOGMANAY_DETAILS = {
   ],
   faqs: [
     { question: "What time should we arrive?", answer: "The party starts at 8:30 pm on 31 December and continues into the early morning." },
-    { question: "Do we need to bring anything?", answer: "We'll confirm whether to bring food, drinks or anything else." },
+    { question: "What food will there be?", answer: "Party food, snacks and nibbles will be available. There is no sit-down meal planned." },
     { question: "Is there parking?", answer: "Parking arrangements are not confirmed yet. Please check with the organiser before travelling." },
     { question: "Can we stay overnight?", answer: "Any overnight arrangements will be shared here when confirmed." }
   ]
