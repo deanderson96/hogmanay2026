@@ -67,7 +67,7 @@
   function answer(i){
     if(answered)return;answered=true;clearClock();
     const q=questions[position];const right=i===q.c;
-    if(right){streak++;bestStreak=Math.max(bestStreak,streak);points+=100+(streak>1?25:0)+(selection.timed?Math.max(0,seconds)*2:0)}
+    if(right){hitsThisRound++;streak++;bestStreak=Math.max(bestStreak,streak);points+=100+(streak>1?25:0)+(selection.timed?Math.max(0,seconds)*2:0)}
     else streak=0;
     [...$("quiz-answers").children].forEach((b,j)=>{b.disabled=true;if(j===q.c)b.classList.add("correct");if(j===i&&!right)b.classList.add("wrong")});
     $("quiz-live-score").textContent="SCORE "+points;
@@ -81,7 +81,6 @@
   }
   function end(){
     clearClock();switchScreen("finish");
-    const correctCount=questions.reduce((n,q,i)=>n,0); // individual correct answers are tracked separately below
     const hits=hitsThisRound;
     $("quiz-final-score").textContent=hits+" / "+questions.length;
     $("quiz-result-heading").textContent=hits===questions.length?"QUIZ LEGEND.":hits>=Math.ceil(questions.length*.7)?"VERY IMPRESSIVE.":hits>=Math.ceil(questions.length*.4)?"NOT TOO SHABBY.":"ROOM TO IMPROVE!";
@@ -89,17 +88,7 @@
     saveBoard({name:player,score:points,correct:hits});
   }
   let hitsThisRound=0;
-  const oldBegin=begin;
-  $("quiz-start").addEventListener("click",()=>{hitsThisRound=0;oldBegin()});
-  const originalAnswer=answer;
-  // Count a correct response as soon as it is selected without counting repeat taps.
-  // The answer callback itself is wrapped through the button handlers below.
-  $("quiz-answers").addEventListener("click",e=>{
-    const b=e.target.closest("button[data-index]");
-    if(!b)return;
-    // Child button click runs the per-question handler first. Count via its marked state.
-    if(b.classList.contains("correct")&&Number(b.dataset.index)===questions[position].c&&!b.dataset.counted){hitsThisRound++;b.dataset.counted="1"}
-  });
+  $("quiz-start").addEventListener("click",()=>{hitsThisRound=0;begin()});
   $("quiz-next").addEventListener("click",next);
   $("quiz-again").addEventListener("click",()=>{clearClock();switchScreen("setup");$("quiz-player").focus()});
   renderBoard();
