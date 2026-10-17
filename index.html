@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101c2d">
+  <meta name="description" content="Your family guide to Hogmanay 2026 — plans, timings, travel and everything you need for the celebrations.">
+  <title>Hogmanay 2026 | Family Celebrations</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="details.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to details</a>
+  <header class="topbar">
+    <a class="brand" href="#home"><span class="brand-star">✦</span> HOGMANAY <span class="brand-year">2026</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#plan">The plan</a><a href="#essentials">Essentials</a><a href="#questions">FAQs</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="spark spark-one" aria-hidden="true">✳</div><div class="spark spark-two" aria-hidden="true">✦</div>
+      <div class="hero-inner">
+        <p class="eyebrow">A family celebration · 31 December 2026</p>
+        <h1 id="hero-title">One more year.<br><em>One big night.</em></h1>
+        <p class="hero-lead">Here's to being together, making memories and welcoming 2027 in style. Everything the family needs to know, all in one place.</p>
+        <div class="hero-buttons"><a class="button primary" href="#plan">See the plans <span aria-hidden="true">↗</span></a><a class="button outline" href="#essentials">Practical details</a></div>
+        <div class="countdown-wrap"><p class="tiny-label">Countdown to the bells</p><div class="countdown" id="countdown" aria-label="Time until Hogmanay"><span>—</span></div></div>
+      </div>
+      <div class="hero-side" aria-hidden="true"><div class="giant-year">26<span>→</span>27</div><div class="circle-text">A NIGHT TO REMEMBER •</div></div>
+    </section>
+    <div class="ticker" aria-hidden="true"><span>GOOD PEOPLE</span><b>✦</b><span>GOOD FOOD</span><b>✦</b><span>GREAT MEMORIES</span><b>✦</b><span>THE BELLS</span><b>✦</b><span>2027</span></div>
+    <section class="section section-intro" id="plan">
+      <div class="section-head"><div><p class="eyebrow dark">01 / THE CELEBRATION</p><h2>What's the <em>plan?</em></h2></div><p class="section-aside">The important bits, minus the endless group chat scrolling.</p></div>
+      <div class="overview-grid">
+        <article class="detail-card"><div class="card-icon">◷</div><p class="card-label">WHEN</p><h3>Thursday<br>31 December</h3><p id="start-time">Start time to be confirmed</p></article>
+        <article class="detail-card"><div class="card-icon">⌖</div><p class="card-label">WHERE</p><h3 id="venue-name">Location to be confirmed</h3><p id="venue-description">We'll share the address here once plans are final.</p><a class="text-link hidden" id="map-link" target="_blank" rel="noopener noreferrer">Open directions ↗</a></article>
+        <article class="detail-card"><div class="card-icon">♡</div><p class="card-label">WHO</p><h3>The whole<br>family</h3><p>A chance to get everyone together and see in the new year.</p></article>
+      </div>
+      <div class="timeline">
+        <div class="timeline-intro"><p class="eyebrow dark">THE RUN OF SHOW</p><h3>From hello<br>to <em>Hogmanay.</em></h3><p>We'll update the timings as the evening comes together.</p></div>
+        <div class="timeline-items" id="timeline"></div>
+      </div>
+    </section>
+    <section class="section essentials" id="essentials">
+      <div class="section-head"><div><p class="eyebrow">02 / GOOD TO KNOW</p><h2>The little <em>details.</em></h2></div><p class="section-aside">A few things to sort before the big night.</p></div>
+      <div class="info-grid">
+        <article class="info-card"><span class="info-symbol">✳</span><h3>Food & drinks</h3><p id="food">Food and drink arrangements are still being confirmed.</p></article>
+        <article class="info-card"><span class="info-symbol">♢</span><h3>What to wear</h3><p id="dress">Wear whatever makes you feel festive and comfortable. More details to follow.</p></article>
+        <article class="info-card"><span class="info-symbol">↗</span><h3>Getting there</h3><p id="travel">Travel and parking information will be added when the venue is confirmed.</p></article>
+        <article class="info-card"><span class="info-symbol">☾</span><h3>Staying over</h3><p id="stay">We'll share any overnight arrangements here.</p></article>
+      </div>
+      <div class="update-banner"><div><p class="tiny-label">KEEP IN THE LOOP</p><h3>Plans can change. This page keeps everyone on the same page.</h3></div><span class="banner-star" aria-hidden="true">✦</span></div>
+    </section>
+    <section class="section faq" id="questions">
+      <div class="section-head"><div><p class="eyebrow dark">03 / QUESTIONS</p><h2>Need to <em>know?</em></h2></div><p class="section-aside">Answers to the questions everyone usually asks.</p></div>
+      <div id="faq-list" class="faq-list"></div>
+      <div class="contact-panel"><div><p class="eyebrow dark">STILL GOT A QUESTION?</p><h3>Give the organiser a shout.</h3><p id="contact-description">Contact details will be shared here soon.</p></div><a id="contact-link" class="button dark-button hidden">Get in touch ↗</a></div>
+    </section>
+  </main>
+  <footer><div class="footer-brand">HOGMANAY <span>2026</span><span class="footer-spark">✦</span></div><p>Good company. Great memories. Happy New Year.</p><a href="#home">Back to top ↑</a></footer>
+</body>
+</html>
