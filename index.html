@@ -3,77 +3,135 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101c2d">
-  <meta name="description" content="Your family guide to Hogmanay 2026 — plans, timings, travel and everything you need for the celebrations.">
-  <title>Hogmanay 2026 | Family Celebrations</title>
+  <meta name="theme-color" content="#100d26">
+  <meta name="description" content="Hogmanay 2026: family plans, midnight countdown, party quiz, beer pong and mini games. The good times start at 8:30 pm.">
+  <title>Hogmanay '26 — The Big Night</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="details.js" defer></script>
-  <script src="app.js" defer></script><script src="effects.js" defer></script><script src="pong.js" defer></script><script src="family-games.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="effects.js" defer></script>
+  <script src="quiz.js" defer></script>
+  <script src="pong.js" defer></script>
+  <script src="family-games.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to details</a>
-  <header class="topbar">
-    <a class="brand" href="#home"><span class="brand-star">✦</span> HOGMANAY <span class="brand-year">2026</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#plan">The plan</a><a href="#games">Games</a><a href="#essentials">Essentials</a><a href="#questions">FAQs</a>
-    </nav>
-  </header>
-  <main id="main">
-    <section class="hero" id="home" aria-labelledby="hero-title"><canvas id="fireworks" aria-hidden="true"></canvas>
-      <div class="spark spark-one" aria-hidden="true">✳</div><div class="spark spark-two" aria-hidden="true">✦</div>
-      <div class="hero-inner">
-        <p class="eyebrow">A family celebration · 31 December 2026</p>
-        <h1 id="hero-title">THE FINAL<br><em>COUNTDOWN.</em></h1>
-        <p class="hero-lead">31 DECEMBER · 8:30 PM 'TIL THE EARLY HOURS. Big laughs, family chaos, party games and the bells. Your all-access pass to Hogmanay 2026.</p>
-        <div class="hero-buttons"><a class="button primary" href="#plan">Explore the party <span aria-hidden="true">↗</span></a><a class="button outline" href="#games">Enter the arcade ↗</a></div>
-        <div class="countdown-wrap"><p class="tiny-label">Countdown to the bells</p><div class="countdown" id="countdown" aria-label="Time until Hogmanay"><span>—</span></div></div>
+<a href="#main" class="skip">Skip to the party</a>
+<header class="site-header">
+  <a href="#home" class="logo" aria-label="Hogmanay 2026 home"><span class="logo-spark">✳</span><span>HOGMANAY<span class="logo-year">'26</span><small>THE FAMILY EDITION</small></span></a>
+  <nav class="nav" aria-label="Main menu">
+    <a href="#plan">The plan</a><a href="#quiz">Party quiz</a><a href="#games">Arcade</a><a href="#essentials">Good to know</a>
+  </nav>
+  <a href="#quiz" class="nav-action">LET'S PLAY <span aria-hidden="true">↗</span></a>
+</header>
+<main id="main">
+  <section class="hero" id="home">
+    <canvas id="fireworks" aria-hidden="true"></canvas>
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-overline"><span class="live-dot"></span> NEW YEAR'S EVE · THURSDAY 31 DEC</div>
+        <h1>OUT WITH<br>THE <span class="year-stroke">OLD.</span><br><span class="hero-highlight">IN WITH<br>THE NEW.</span></h1>
+        <p class="hero-description">Same wonderful family. Another unforgettable night. Big laughs, terrible dance moves, games and a countdown we'll remember.</p>
+        <div class="hero-cta"><a class="button button-lime" href="#quiz">START THE PARTY <span>↗</span></a><a class="button button-ghost" href="#plan">GET THE DETAILS <span>↓</span></a></div>
+        <div class="hero-counter"><div class="counter-title"><span>THE COUNTDOWN IS ON</span><span class="counter-asterisk">✳</span></div><div id="countdown" class="countdown" role="timer" aria-label="Countdown until midnight"></div></div>
       </div>
-      <div class="hero-side" aria-hidden="true"><div class="giant-year">26<span>→</span>27</div><div class="circle-text">A NIGHT TO REMEMBER •</div></div>
-    </section>
-    <div class="ticker" aria-hidden="true"><span>GOOD PEOPLE</span><b>✦</b><span>GOOD FOOD</span><b>✦</b><span>GREAT MEMORIES</span><b>✦</b><span>THE BELLS</span><b>✦</b><span>2027</span></div>
-    <section class="section section-intro" id="plan">
-      <div class="section-head"><div><p class="eyebrow dark">01 / THE CELEBRATION</p><h2>What's the <em>plan?</em></h2></div><p class="section-aside">The important bits, minus the endless group chat scrolling.</p></div>
-      <div class="overview-grid">
-        <article class="detail-card"><div class="card-icon">◷</div><p class="card-label">WHEN</p><h3>Thursday<br>31 December</h3><p id="start-time">Start time to be confirmed</p></article>
-        <article class="detail-card"><div class="card-icon">⌖</div><p class="card-label">WHERE</p><h3 id="venue-name">Location to be confirmed</h3><p id="venue-description">We'll share the address here once plans are final.</p><a class="text-link hidden" id="map-link" target="_blank" rel="noopener noreferrer">Open directions ↗</a></article>
-        <article class="detail-card"><div class="card-icon">♡</div><p class="card-label">WHO</p><h3>The whole<br>family</h3><p>A chance to get everyone together and see in the new year.</p></article>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="disco-beam beam-one"></div><div class="disco-beam beam-two"></div>
+        <div class="disco-ball"><div class="disco-ball-grid"></div><div class="disco-spark shine-one">✦</div><div class="disco-spark shine-two">✧</div></div>
+        <span class="star scatter-a">✷</span><span class="star scatter-b">✦</span><span class="star scatter-c">✳</span>
+        <div class="hero-sticker"><span>YOU'RE</span><strong>INVITED!</strong><span>✳ ✳ ✳</span></div>
+        <div class="year-graphic">20<span>→</span>27</div>
       </div>
-      <div class="timeline">
-        <div class="timeline-intro"><p class="eyebrow dark">THE RUN OF SHOW</p><h3>From hello<br>to <em>Hogmanay.</em></h3><p>We'll update the timings as the evening comes together.</p></div>
-        <div class="timeline-items" id="timeline"></div>
+    </div>
+    <div class="hero-ribbon"><span class="ribbon-side">THE OFFICIAL FAMILY PARTY GUIDE</span><div><strong>8:30</strong><span>PM START</span></div><span class="ribbon-separator">✳</span><div><strong>31.12</strong><span>THURSDAY</span></div><span class="ribbon-side">UNTIL THE EARLY HOURS ↗</span></div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>ONE MORE YEAR</span><b>✳</b><span>ONE BIG PARTY</span><b>✳</b><span>GOOD PEOPLE, GREAT NIGHT</span><b>✳</b><span>ONE MORE YEAR</span><b>✳</b><span>ONE BIG PARTY</span><b>✳</b><span>GOOD PEOPLE, GREAT NIGHT</span><b>✳</b></div></div>
+
+  <section class="section plan-section" id="plan">
+    <div class="section-heading"><div><div class="section-kicker"><span>01</span> THE LOWDOWN</div><h2>THE NIGHT <span>AT A GLANCE.</span></h2></div><p>No digging through the family group chat. Here's what you need to know.</p></div>
+    <div class="plan-cards">
+      <article class="plan-card plan-card-lime"><span class="card-number">01 / WHEN</span><div class="card-graphic">◷</div><h3>8:30<span>PM</span></h3><strong>UNTIL THE EARLY HOURS</strong><p>Thursday 31 December 2026</p></article>
+      <article class="plan-card plan-card-purple"><span class="card-number">02 / WHERE</span><div class="card-graphic">⌁</div><h3 class="card-venue" id="venue-name">VENUE TBC</h3><p id="venue-description">Location details are coming soon.</p><a id="map-link" class="card-link hidden" rel="noopener noreferrer" target="_blank">DIRECTIONS ↗</a></article>
+      <article class="plan-card plan-card-pink"><span class="card-number">03 / WHO</span><div class="card-graphic">♥</div><h3>THE WHOLE<br>GANG.</h3><p>Family, fun and a fresh new year together.</p></article>
+    </div>
+    <div class="schedule-block"><div class="schedule-intro"><span class="pill-label">THE RUN OF SHOW</span><h3>FROM THE<br>FIRST HELLO<br>TO THE <span>BELLS.</span></h3><p>Arrivals start at <span id="start-time">8:30 pm until the early hours</span>. The rest of the night is ours to make.</p></div><div class="schedule-lines" id="timeline"></div></div>
+  </section>
+
+  <section class="quiz-section" id="quiz">
+    <div class="quiz-glow" aria-hidden="true"></div>
+    <div class="quiz-topline"><span>02 / THE MAIN EVENT</span><span>EST. GOOD TIMES · 2026</span></div>
+    <div class="quiz-heading"><div><span class="eyebrow">WELCOME TO THE FAMILY GAME SHOW</span><h2>THE BIG FAT<br><span>HOGMANAY QUIZ.</span></h2><p>Ten questions. One brain. Absolutely no pressure. Well, maybe a little.</p></div><div class="quiz-doodle" aria-hidden="true">?!<span>★</span></div></div>
+    <div class="quiz-shell" id="quiz-app">
+      <div class="quiz-main">
+        <div class="quiz-setup" id="quiz-setup">
+          <div class="quiz-tag">★ READY, PLAYER ONE?</div>
+          <h3>THINK YOU KNOW<br>YOUR STUFF?</h3>
+          <p>Choose a round, enter a nickname and take on the family. Scores stay on this device.</p>
+          <label for="quiz-player" class="input-label">YOUR PLAYER NAME</label><input id="quiz-player" type="text" maxlength="22" autocomplete="nickname" placeholder="e.g. Quizmaster Granny">
+          <div class="input-label">PICK YOUR CATEGORY</div>
+          <div id="quiz-categories" class="category-row">
+            <button type="button" class="category-chip selected" data-category="mixed" aria-pressed="true">✳ MIXED BAG</button>
+            <button type="button" class="category-chip" data-category="newyear" aria-pressed="false">✦ NEW YEAR</button>
+            <button type="button" class="category-chip" data-category="general" aria-pressed="false">◈ GENERAL</button>
+            <button type="button" class="category-chip" data-category="pop" aria-pressed="false">♫ POP CULTURE</button>
+          </div>
+          <div class="quiz-mode"><label><input type="checkbox" id="quiz-timed"> SPEED ROUND <span>15 seconds per question</span></label></div>
+          <button id="quiz-start" class="button button-dark" type="button">LET'S GET QUIZZICAL <span>↗</span></button>
+        </div>
+        <div class="quiz-playing hidden" id="quiz-playing">
+          <div class="quiz-ask-top"><span id="quiz-progress-text">QUESTION 1 / 10</span><span id="quiz-live-score">SCORE 0</span><span id="quiz-clock">CHILL MODE</span></div>
+          <div class="quiz-progress"><div id="quiz-progress-bar"></div></div>
+          <h3 id="quiz-question">Here comes your question.</h3>
+          <div class="quiz-answers" id="quiz-answers"></div>
+          <div class="quiz-feedback" id="quiz-feedback" role="status" aria-live="polite"></div>
+          <button class="button button-dark hidden" id="quiz-next" type="button">NEXT QUESTION <span>→</span></button>
+        </div>
+        <div class="quiz-complete hidden" id="quiz-complete">
+          <div class="quiz-finish-star" aria-hidden="true">★</div><div class="quiz-tag">ROUND COMPLETE!</div>
+          <h3 id="quiz-result-heading">THE VERDICT IS IN.</h3>
+          <div id="quiz-final-score" class="quiz-final-score">0 / 10</div>
+          <p id="quiz-result-message"></p>
+          <button id="quiz-again" class="button button-dark" type="button">PLAY ANOTHER ROUND <span>↗</span></button>
+        </div>
       </div>
-    </section>
-    <section class="section games-section" id="games" aria-labelledby="games-title">
-      <div class="section-head"><div><p class="eyebrow">02 / PRE-GAME ARCADE</p><h2 id="games-title">Game <em>on.</em></h2></div><p class="section-aside">A little friendly competition before the bells. No drinks required to play.</p></div>
-      <div class="game-layout">
-        <div class="game-copy"><span class="game-kicker">✦ THE FAMILY ARCADE · GAME 01</span><h3>Beer pong<br><em>practice.</em></h3><p>Tap a red cup to throw the ball straight at it, or drag from the white ball to aim. Clear the table in as few shots as possible!</p><div class="game-scoreboard"><div><span id="pong-score">0 / 6</span><small>CUPS SUNK</small></div><div><span id="pong-shots">0</span><small>THROWS</small></div><div><span id="pong-best">—</span><small>BEST ROUND</small></div></div><button type="button" class="button primary" id="pong-reset">New round ↗</button></div>
-        <div class="game-stage"><div class="game-stage-heading"><span>THE PONG TABLE</span><span class="game-live">● PRACTICE MODE</span></div><canvas id="pong-canvas" width="720" height="580" aria-label="Beer pong practice game. Drag the ball back and release to throw it into a cup." tabindex="0"></canvas><div class="game-toolbar"><button type="button" id="pong-shoot" class="game-shoot">Throw ball ↗</button><p id="pong-status" role="status" aria-live="polite">Tap a red cup to shoot!</p></div></div>
+      <aside class="leaderboard"><div class="leaderboard-icon">✸</div><span class="eyebrow">BRAGGING RIGHTS</span><h3>HALL OF<br>FAME.</h3><p>Who's taking the crown? Top scores on <strong>this device</strong>.</p><ol id="quiz-leaderboard" class="leaderboard-list"><li>Be the first to play!</li></ol><div class="leaderboard-foot">★ NO CHEATING. WE'RE WATCHING. ★</div></aside>
+    </div>
+  </section>
+
+  <section class="section arcade-section" id="games">
+    <div class="section-heading"><div><div class="section-kicker"><span>03</span> THE PARTY ARCADE</div><h2>LESS SCROLLING.<br><span>MORE PLAYING.</span></h2></div><p>Little games, big rivalries. Pass the phone around — all ages welcome.</p></div>
+    <div class="pong-layout">
+      <div class="pong-info"><span class="feature-badge">THE HEADLINER · GAME 01</span><h3>BEER<br><span>PONG.</span></h3><p>It's the virtual version, so no drinks are required. Tap a red cup to aim a throw — or drag the ball towards your target. Sink all six!</p>
+        <div class="pong-stats"><div><strong id="pong-score">0 / 6</strong><span>CUPS IN</span></div><div><strong id="pong-shots">0</strong><span>SHOTS</span></div><div><strong id="pong-best">—</strong><span>YOUR BEST</span></div></div>
+        <button id="pong-reset" class="button button-dark" type="button">RESET THE TABLE <span>↻</span></button>
       </div>
-    </section>
-    <section class="section party-games" id="family-games">
-      <div class="section-head"><div><p class="eyebrow">MORE PARTY GAMES</p><h2>Bring the <em>chaos.</em></h2></div><p class="section-aside">Pass the phone around. No downloads, sign-ups or drinks needed.</p></div>
-      <div class="party-grid">
-        <article class="party-card"><div class="party-icon">⚡</div><p class="game-kicker">GAME 02 · SPEED RUN</p><h3>Reflex Royale</h3><p>Wait for green, then tap as fast as you can. Jump the gun and you lose.</p><div class="reaction-pad" id="reaction-pad" role="button" tabindex="0" aria-label="Start reaction test"><span id="reaction-message">TAP TO START</span><strong id="reaction-result">Ready?</strong></div><button class="mini-button" id="reaction-restart" type="button">Try again ↗</button></article>
-        <article class="party-card"><div class="party-icon">🎭</div><p class="game-kicker">GAME 03 · EVERYONE PLAYS</p><h3>Would You Rather?</h3><p>Two choices. One impossible decision. Take turns choosing and defending your answer.</p><div class="choice-question" id="rather-question">Ready for a ridiculous dilemma?</div><div class="choice-buttons"><button id="rather-a" type="button">Option A</button><button id="rather-b" type="button">Option B</button></div><p id="rather-results" aria-live="polite">Pick a side!</p><button class="mini-button" id="rather-next" type="button">Next question ↗</button></article>
-        <article class="party-card"><div class="party-icon">🎲</div><p class="game-kicker">GAME 04 · GROUP CHALLENGE</p><h3>Party Dare Generator</h3><p>Funny, harmless challenges for all ages. Draw one and give it a go.</p><div class="dare-result" id="dare-result" aria-live="polite">Who wants the first challenge?</div><button class="mini-button" id="dare-next" type="button">Give me a challenge ↗</button></article>
-      </div>
-    </section>
-    <section class="section essentials" id="essentials">
-      <div class="section-head"><div><p class="eyebrow">03 / GOOD TO KNOW</p><h2>The little <em>details.</em></h2></div><p class="section-aside">A few things to sort before the big night.</p></div>
-      <div class="info-grid">
-        <article class="info-card"><span class="info-symbol">✳</span><h3>Food & drinks</h3><p id="food">Food and drink arrangements are still being confirmed.</p></article>
-        <article class="info-card"><span class="info-symbol">♢</span><h3>What to wear</h3><p id="dress">Wear whatever makes you feel festive and comfortable. More details to follow.</p></article>
-        <article class="info-card"><span class="info-symbol">↗</span><h3>Getting there</h3><p id="travel">Travel and parking information will be added when the venue is confirmed.</p></article>
-        <article class="info-card"><span class="info-symbol">☾</span><h3>Staying over</h3><p id="stay">We'll share any overnight arrangements here.</p></article>
-      </div>
-      <div class="update-banner"><div><p class="tiny-label">KEEP IN THE LOOP</p><h3>Plans can change. This page keeps everyone on the same page.</h3></div><span class="banner-star" aria-hidden="true">✦</span></div>
-    </section>
-    <section class="section faq" id="questions">
-      <div class="section-head"><div><p class="eyebrow dark">04 / QUESTIONS</p><h2>Need to <em>know?</em></h2></div><p class="section-aside">Answers to the questions everyone usually asks.</p></div>
-      <div id="faq-list" class="faq-list"></div>
-      <div class="contact-panel"><div><p class="eyebrow dark">STILL GOT A QUESTION?</p><h3>Give the organiser a shout.</h3><p id="contact-description">Contact details will be shared here soon.</p></div><a id="contact-link" class="button dark-button hidden">Get in touch ↗</a></div>
-    </section>
-  </main>
-  <footer><div class="footer-brand">HOGMANAY <span>2026</span><span class="footer-spark">✦</span></div><p>Good company. Great memories. Happy New Year.</p><a href="#home">Back to top ↑</a></footer>
+      <div class="pong-panel"><div class="panel-top"><span>● PONG PRACTICE</span><span>INTERACTIVE TABLE ↗</span></div><div id="pong-table" class="pong-table" aria-label="Six-cup beer pong practice table"><div class="pong-midline"></div><div class="cup-cluster" id="pong-cups"></div><button class="pong-ball" id="pong-ball" type="button" aria-label="Drag this ball toward a cup to throw it"></button><div id="pong-aimline" class="pong-aimline" aria-hidden="true"></div><div class="pong-floor-label">PULL BACK • RELEASE • SCORE</div></div><div class="panel-bottom"><p id="pong-status" role="status" aria-live="polite">Tap a red cup to throw!</p><button type="button" id="pong-shoot" class="shoot-button">AUTO AIM ↗</button></div></div>
+    </div>
+    <div class="mini-games-heading"><span>AND THE FUN DOESN'T STOP THERE</span><span>↓ THREE MORE TO TRY</span></div>
+    <div class="party-grid">
+      <article class="party-card reaction-card"><span class="mini-game-index">02 / TEST YOUR SPEED</span><div class="party-icon">⚡</div><h3>REFLEX<br>ROYALE.</h3><p>Don't tap until the screen turns green. Fastest fingers win.</p><div class="reaction-pad" id="reaction-pad" role="button" tabindex="0" aria-label="Start reaction test"><span id="reaction-message">TAP TO START</span><strong id="reaction-result">READY?</strong></div><button class="mini-button" id="reaction-restart" type="button">TRY AGAIN ↗</button></article>
+      <article class="party-card rather-card"><span class="mini-game-index">03 / IMPOSSIBLE CHOICES</span><div class="party-icon">✳</div><h3>WOULD YOU<br>RATHER?</h3><p>Pick a side. Defend it loudly. Let the family decide.</p><div class="choice-question" id="rather-question">READY FOR A RIDICULOUS DILEMMA?</div><div class="choice-buttons"><button id="rather-a" type="button">OPTION A</button><button id="rather-b" type="button">OPTION B</button></div><p id="rather-results" aria-live="polite">PICK A SIDE!</p><button class="mini-button" id="rather-next" type="button">NEXT DILEMMA ↗</button></article>
+      <article class="party-card dare-card"><span class="mini-game-index">04 / SPIN THE CHAOS</span><div class="party-icon">★</div><h3>DARE<br>GENERATOR.</h3><p>Harmless, hilarious challenges. Get the whole family involved.</p><div class="dare-result" id="dare-result" aria-live="polite">WHO'S FIRST?</div><button class="mini-button" id="dare-next" type="button">GIVE ME A DARE ↗</button></article>
+    </div>
+  </section>
+
+  <section class="section essentials-section" id="essentials">
+    <div class="section-heading"><div><div class="section-kicker"><span>04</span> THE IMPORTANT BITS</div><h2>COME PREPARED.<br><span>LEAVE HAPPY.</span></h2></div><p>We'll keep the essentials updated as plans are confirmed.</p></div>
+    <div class="essentials-grid">
+      <article><span>01</span><div class="essential-illustration">✺</div><h3>FOOD & DRINKS</h3><p id="food">Food and drink plans will be shared here soon.</p></article>
+      <article><span>02</span><div class="essential-illustration">✧</div><h3>WHAT TO WEAR</h3><p id="dress">Anything festive and comfortable. Dress details to follow.</p></article>
+      <article><span>03</span><div class="essential-illustration">↗</div><h3>GETTING THERE</h3><p id="travel">Directions and parking info coming soon.</p></article>
+      <article><span>04</span><div class="essential-illustration">☾</div><h3>STAYING OVER</h3><p id="stay">Overnight arrangements will be posted here.</p></article>
+    </div>
+  </section>
+  <section class="faq-section" id="questions"><div class="faq-intro"><div class="section-kicker"><span>05</span> THE SMALL PRINT</div><h2>GOT<br><span>QUESTIONS?</span></h2><p>Everything else you need to know.</p></div><div class="faq-content"><div id="faq-list"></div><div class="contact-strip"><div><strong>STILL NEED SOMETHING?</strong><p id="contact-description">Contact details coming soon.</p></div><a id="contact-link" class="button button-dark hidden">GET IN TOUCH ↗</a></div></div></section>
+  <section class="closing"><div class="closing-spark">✳</div><span>SEE YOU ON 31 DECEMBER</span><h2>LET'S MAKE<br><em>IT A NIGHT.</em></h2><a href="#home" class="button button-dark">BACK TO THE TOP ↑</a><div class="closing-bottom">HOGMANAY 2026 <span>✷</span> 8:30 PM 'TIL LATE <span>✷</span> FAMILY FIRST, ALWAYS.</div></section>
+</main>
+<footer class="footer"><span>✳ HOGMANAY '26</span><span>MADE FOR THE WHOLE FAMILY</span><span>CHEERS TO 2027!</span></footer>
 </body>
 </html>
